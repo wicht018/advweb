@@ -1,0 +1,156 @@
+body {
+}
+
+	@font-face {
+	font-family: light;
+	src:url(../fonts/avenirlight.otf) format('opentype');	
+}
+
+	@font-face {
+	font-family: head;
+	src:url(../fonts/avenirmedium.otf) format('opentype');	
+}
+
+.titleout {
+	font-family: head;
+	font-size: 72px;
+	color: black;
+	opacity: 0.40;
+	letter-spacing: 3px;
+	position: absolute;
+	right: 50%;
+	top: 37%;
+	z-index: 1;
+
+	animation: topdown 3s cubic-bezier(.25,.61,.73,.97);
+	animation-fill-mode: forwards;		
+}
+
+@keyframes topdown {
+	0% {opacity: 0; top: 0%;}
+	100% {opacity: 0.4;}
+}
+
+.titlecast {
+	font-family: head;
+	font-size: 72px;
+	color: black;
+	opacity: 0.40;
+	letter-spacing: 3px;
+	position: absolute;
+	left: 50%;
+	top: 43%;
+	z-index: 1;
+	filter: blur(3px);
+
+	animation: bottomup 3s cubic-bezier(.25,.61,.73,.97);
+	animation-fill-mode: forwards;	
+}
+
+@keyframes bottomup {
+	0% {opacity: 0; top: 100%; filter:blur(0px);}
+	75% {filter:blur(3px);}
+	100% {opacity: 0.4;}
+}
+
+.button {
+	display: block; /* You must include this line, otherwise your link will not be shown! */	
+	font-family: light;
+	font-size: 24px;
+	text-decoration: none;
+	background-color: white;
+	color: black;	
+	opacity: 0;
+	letter-spacing: 1px;
+	position: absolute;
+	left: 50%;
+	top: 67%;
+	transform: translate(-50%, -50%);	
+	border: 1px black solid;
+	border-radius: 25px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+	z-index: 1;	
+
+	animation: buttonfade 2s;
+	animation-fill-mode: forwards;
+	animation-delay: 3s;	
+}
+
+	@keyframes buttonfade {
+		0% {opacity: 0;}
+		100% {opacity: 0.65;}
+	}
+
+	.button:hover {
+		background-color: #999999;
+		color: white;
+		opacity: 1;
+		border-color: #999999;
+		transition: 0.25s;
+	}
+
+.redlayer {
+	background:url("../images/camerared.png");
+	background-size: no-repeat;
+	position: absolute;
+	width: 1600px;
+	height: 1200px;
+	opacity: 0;
+	top: 60%;
+	left: 50%;
+	transform:translate(-50%,-50%);
+	z-index: -1;
+
+	animation: redmove 3s cubic-bezier(.25,.61,.73,.97);
+	animation-fill-mode: forwards;
+}
+
+	@keyframes redmove {
+		0% {opacity: 0; left: 0%; top: 0%;}
+		100% {opacity: .75; left: 100%; top: 100%;}
+	}
+
+.greenlayer {
+	background:url("../images/cameragreen.png");
+	background-size: no-repeat;
+	position: absolute;
+	width: 1600px;
+	height: 1200px;
+	opacity: 0;
+	top: 60%;
+	left: 50%;
+	transform:translate(-50%,-50%);
+	z-index: -2;
+
+	animation: greenmove 3s cubic-bezier(.25,.61,.73,.97);
+	animation-fill-mode: forwards;
+}
+
+	@keyframes greenmove {
+		0% {opacity: 0; left: 100%; top: 100%;}
+		100% {opacity: .75; left: 0%; top: 0%;}
+	}
+
+.bluelayer {
+	background:url("../images/camerablue.png");
+	background-size: no-repeat;
+	position: absolute;
+	width: 1600px;
+	height: 1200px;
+	opacity: 0;
+	top: 60%;
+	left: 50%;
+	transform:translate(-50%,-50%);
+	z-index: -3;
+	
+	animation: bluemove 3s;
+	animation-fill-mode: forwards;
+}
+
+	@keyframes bluemove {
+		0% {opacity: 0;}
+		100% {opacity: .75;}
+	}
